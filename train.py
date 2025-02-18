@@ -8,6 +8,7 @@ from numpy import mean
 from cfg import get_cfg
 from datasets import get_ds
 from methods import get_method
+from torch import save, load
 
 if __name__ == "__main__":
     cfg = get_cfg()
@@ -21,7 +22,7 @@ if __name__ == "__main__":
     model.cuda().train()
     critic.cuda().train()
     if cfg.fname is not None:
-        model.load_state_dict(torch.load(cfg.fname))
+        model.load_state_dict(load(cfg.fname))
 
     optimizer = optim.Adam(model.parameters(), lr=cfg.lr, betas=(0.9, 0.99), weight_decay=cfg.adam_l2)
     critic_optimizer = optim.Adam(critic.parameters(), lr=1e-3, betas=(0.9, 0.99), weight_decay=1e-4)
@@ -63,7 +64,7 @@ if __name__ == "__main__":
 
         if (ep + 1) % 100 == 0:
             fname = f"models/{cfg.method}_{cfg.dataset}_{ep}_{acc[1]}_{acc_knn}.pt"
-            torch.save(model.state_dict(), fname)
+            save(model.state_dict(), fname)
 
         print({"loss": mean(loss_ep), "critic_loss": mean(critic_loss_ep), "ep": ep})
 
