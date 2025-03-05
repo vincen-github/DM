@@ -1,4 +1,4 @@
-# Distribution Matching for Self-Supervised Transfer Learning.
+# Distribution Matching for Self-Supervised Transfer Learning
 Official implementation of Distribution Matching (DM) for Self-Supervised Transfer Learning.
 
 ## Organization
