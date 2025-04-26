@@ -110,7 +110,7 @@ def get_cfg():
     )
     parser.add_argument(
         "--Kprime",
-        type=float,
+        type=int,
         default=384,
         help="number of reference part",
     )
