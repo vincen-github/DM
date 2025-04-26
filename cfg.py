@@ -52,7 +52,7 @@ def get_cfg():
     )
     parser.add_argument("--lr", type=float, default=1e-3, help="learning rate")
     parser.add_argument(
-        "--adam_l2", type=float, default=5e-7, help="weight decay (L2 penalty)"
+        "--adam_l2", type=float, default=0, help="weight decay (L2 penalty)"
     )
     parser.add_argument(
         "--head_layers", type=int, default=2, help="number of FC layers in head"
