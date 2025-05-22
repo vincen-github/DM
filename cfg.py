@@ -50,9 +50,9 @@ def get_cfg():
         default="step",
         help="learning rate schedule type",
     )
-    parser.add_argument("--lr", type=float, default=1e-3, help="learning rate")
+    parser.add_argument("--lr", type=float, default=3e-5, help="learning rate")
     parser.add_argument(
-        "--adam_l2", type=float, default=0, help="weight decay (L2 penalty)"
+        "--adam_l2", type=float, default=1e-4, help="weight decay (L2 penalty)"
     )
     parser.add_argument(
         "--head_layers", type=int, default=2, help="number of FC layers in head"
