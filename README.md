@@ -14,9 +14,9 @@ All experiments were conducted using a single Tesla V100 GPU unit. The torch ver
 
 ## Usage
 ```
-python -u -m train --dataset cifar10 --lr 3e-5 --bs 512
-python -u -m train --dataset cifar100 --lr 3e-5 --bs 512
-python -u -m train --dataset stl10 --lr 3e-5 --bs 384
+python -u -m train --dataset cifar10 --bs 512
+python -u -m train --dataset cifar100 --bs 512
+python -u -m train --dataset stl10 --bs 384
 ```
 
 ## Citation
